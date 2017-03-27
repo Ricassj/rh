@@ -1,0 +1,21 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteCond $1 !^(index\.php|images|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+
+DirectoryIndex index.php
+Options All -Indexes
+
+#AddType application/x-httpd-php .js
+#AddHandler x-httpd-php5 .js
+
+#<FilesMatch "\.(js|php)$">
+#SetHandler application/x-httpd-php
+#</FilesMatch>
+
